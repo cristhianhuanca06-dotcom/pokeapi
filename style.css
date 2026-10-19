@@ -1,0 +1,17 @@
+body{
+    font-family: Arial, Helvetica, sans-serif ;
+    text-align: center;
+    padding: 40px;
+    background-color: antiquewhite;
+}
+
+.Buscador{
+    padding: 0px;
+    font-size: 16px;
+}
+
+.Buscador button{
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
