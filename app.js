@@ -31,6 +31,7 @@ function mostrarPokemon(datos){
         <p>Tipo: ${tipos}</p>
         <p>Peso: ${datos.weight}</p>
         <p>Altura: ${datos.height}</p>
+        <p>Experiencia: ${datos.base_experience}</p>
     </div>
     `
 }
