@@ -3,7 +3,7 @@ const inputNombre = document.getElementById('inputNombre');
 const resultado = document.getElementById('resultado');
 
 btnBuscar.addEventListener('click' , async() => {
-    const nombre= inputNombre.value.tolowerCase().trim();
+    const nombre = inputNombre.value.toLowerCase().trim();
     if(!nombre) return;
 
     resultado.innerHTML = 'Buscando.................';
@@ -15,7 +15,22 @@ btnBuscar.addEventListener('click' , async() => {
         }
 
         const datos = await respuesta.json();
+        mostrarPokemon(datos);
     } catch (error) {
         resultado.innerHTML = `<p> X ${error.message}</p>`;
     }
 });
+
+function mostrarPokemon(datos){
+    const tipos = datos.types.map(t=>t.type.name).join(', ');
+
+    resultado.innerHTML = `
+    <div class="tarjeta">
+        <h2>${datos.name}</h2>
+        <img src="${datos.sprites.front_default}">
+        <p>Tipo: ${tipos}</p>
+        <p>Peso: ${datos.weight}</p>
+        <p>Altura: ${datos.height}</p>
+    </div>
+    `
+}
